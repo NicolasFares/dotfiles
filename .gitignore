@@ -1,0 +1,79 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Sensitive files
+*.pem
+*.p12
+*.key
+*.crt
+*.csr
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+known_hosts
+authorized_keys
+
+# Tokens and credentials
+*token*
+*secret*
+*password*
+*credential*
+.env
+.env.*
+
+# Cache and temporary files
+*.cache
+*.tmp
+*.temp
+*.log
+*.pid
+*.swp
+*.swo
+*~
+
+# IDE and editor files
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Application specific
+.claude/
+.orbstack/
+.docker/config.json
+.npm/_logs/
+.npm/_cacache/
+.zsh_sessions/
+.zcompdump*
+.lesshst
+.python_history
+.zsh_history
+
+# VSCode workspace settings (keep user settings, ignore workspace)
+.vscode/workspace.json
+.vscode/.ropeproject
+
+# Config files that might contain sensitive data
+.config/gh/hosts.yml
+.config/*/secrets/
+.config/*/tokens/
+.config/*/credentials/
+
+# Sockets and runtime files
+*.socket
+*.sock
