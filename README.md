@@ -4,7 +4,7 @@ My personal configuration files for macOS development environment.
 
 ## 📁 Structure
 
-```
+```txt
 dotfiles/
 ├── zsh/           # Zsh shell configuration
 │   ├── .zshrc     # Main Zsh configuration
@@ -12,7 +12,7 @@ dotfiles/
 ├── git/           # Git configuration
 │   └── .gitconfig # Git global settings
 ├── vscode/        # Visual Studio Code settings
-│   └── .vscode/   # User settings and extensions
+│   └── User/      # User settings, keybindings, and extensions
 ├── config/        # Application configurations
 │   └── .config/   # Various app configs
 ├── install.sh     # Installation script
@@ -22,17 +22,20 @@ dotfiles/
 ## 🚀 Quick Start
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/NicolasFares/dotfiles.git ~/dotfiles
    cd ~/dotfiles
    ```
 
 2. **Run the installation script:**
+
    ```bash
    ./install.sh
    ```
 
 3. **Restart your terminal or reload your shell:**
+
    ```bash
    source ~/.zshrc
    ```
@@ -42,22 +45,32 @@ dotfiles/
 If you prefer to install specific components manually:
 
 ### Zsh Configuration
+
 ```bash
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/.zprofile ~/.zprofile
 ```
 
 ### Git Configuration
+
 ```bash
 ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 ```
 
 ### VS Code Settings
+
 ```bash
-ln -s ~/dotfiles/vscode/.vscode ~/.vscode
+# Create VSCode User directory if it doesn't exist
+mkdir -p ~/Library/Application\ Support/Code/User
+
+# Link individual settings files
+ln -s ~/dotfiles/vscode/User/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -s ~/dotfiles/vscode/User/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -s ~/dotfiles/vscode/User/extensions.json ~/Library/Application\ Support/Code/User/extensions.json
 ```
 
 ### App Configurations
+
 ```bash
 ln -s ~/dotfiles/config/.config ~/.config
 ```
@@ -66,7 +79,11 @@ ln -s ~/dotfiles/config/.config ~/.config
 
 - **Zsh**: Shell configuration with Oh My Zsh
 - **Git**: Global Git settings and aliases
-- **VS Code**: User settings and configuration
+- **VS Code**: User settings, keybindings, and extension recommendations
+  - Unified formatting and code style preferences
+  - Language-specific configurations for Python, TypeScript, etc.
+  - Comprehensive file exclusions and search optimizations
+  - Curated extension recommendations for development
 - **App Configs**: Various application configurations
 
 ## 🛡️ Security
@@ -80,6 +97,7 @@ ln -s ~/dotfiles/config/.config ~/.config
 To update your dotfiles:
 
 1. Pull the latest changes:
+
    ```bash
    cd ~/dotfiles
    git pull origin main

@@ -1,0 +1,152 @@
+{
+  // =============================================================================
+  // Personal Preferences (from existing user settings)
+  // =============================================================================
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.minimap.enabled": false,
+
+  // =============================================================================
+  // Python Configuration (user-level only)
+  // =============================================================================
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "python.createEnvironment.trigger": "off",
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.executeInFileDir": false,
+
+  // =============================================================================
+  // JavaScript/TypeScript Configuration
+  // =============================================================================
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // =============================================================================
+  // Formatting & Code Style
+  // =============================================================================
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.ruff": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "files.autoSave": "onWindowChange",
+
+  // Default formatter for different file types
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // =============================================================================
+  // File Explorer & Search
+  // =============================================================================
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.coverage": true,
+    "**/coverage.xml": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/htmlcov": true,
+    "**/.next": true,
+    "**/.venv": true,
+    "**/uv.lock": true,
+    "**/out": true,
+    "**/build": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.venv": true,
+    "**/__pycache__": true,
+    "**/coverage": true,
+    "**/.git": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/.next": true,
+    "**/uv.lock": true,
+    "**/pnpm-lock.yaml": true,
+    "**/out": true
+  },
+
+  // =============================================================================
+  // Git Configuration
+  // =============================================================================
+  "git.ignoreLimitWarning": true,
+  "git.autofetch": true,
+
+  // =============================================================================
+  // Terminal Configuration
+  // =============================================================================
+  "terminal.integrated.defaultProfile.osx": "zsh",
+
+  // =============================================================================
+  // IntelliSense & Auto-completion
+  // =============================================================================
+  "editor.suggest.insertMode": "replace",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "on",
+
+  // =============================================================================
+  // Editor Appearance & Behavior
+  // =============================================================================
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+
+  // =============================================================================
+  // Language-Specific Configuration
+  // =============================================================================
+  "emmet.includeLanguages": {
+    "typescript": "html",
+    "typescriptreact": "html"
+  },
+
+  // =============================================================================
+  // Extensions Configuration
+  // =============================================================================
+  "jupyter.askForKernelRestart": false,
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+  "redhat.telemetry.enabled": true,
+  "cSpell.enabledFileTypes": {
+    "dockercompose": false
+  }
+}

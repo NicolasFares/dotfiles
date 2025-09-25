@@ -39,12 +39,21 @@ backup_and_link "$DOTFILES_DIR/zsh/.zprofile" "$HOME/.zprofile"
 # Git configuration
 backup_and_link "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 
-# VSCode configuration
-if [ -d "$HOME/.vscode" ]; then
-    echo "📦 Backing up existing VSCode config"
-    mv "$HOME/.vscode" "$BACKUP_DIR/"
+# VSCode User configuration
+VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
+if [ -d "$VSCODE_USER_DIR" ]; then
+    # Backup individual settings files instead of entire directory
+    [ -f "$VSCODE_USER_DIR/settings.json" ] && cp "$VSCODE_USER_DIR/settings.json" "$BACKUP_DIR/vscode_settings.json"
+    [ -f "$VSCODE_USER_DIR/keybindings.json" ] && cp "$VSCODE_USER_DIR/keybindings.json" "$BACKUP_DIR/vscode_keybindings.json"
+    [ -f "$VSCODE_USER_DIR/extensions.json" ] && cp "$VSCODE_USER_DIR/extensions.json" "$BACKUP_DIR/vscode_extensions.json"
+else
+    mkdir -p "$VSCODE_USER_DIR"
 fi
-backup_and_link "$DOTFILES_DIR/vscode/.vscode" "$HOME/.vscode"
+
+# Create symlinks for VSCode user settings
+backup_and_link "$DOTFILES_DIR/vscode/User/settings.json" "$VSCODE_USER_DIR/settings.json"
+backup_and_link "$DOTFILES_DIR/vscode/User/keybindings.json" "$VSCODE_USER_DIR/keybindings.json"
+backup_and_link "$DOTFILES_DIR/vscode/User/extensions.json" "$VSCODE_USER_DIR/extensions.json"
 
 # Config directory
 if [ -d "$HOME/.config" ]; then
@@ -56,3 +65,4 @@ backup_and_link "$DOTFILES_DIR/config/.config" "$HOME/.config"
 echo "✅ Dotfiles installation complete!"
 echo "📦 Backups stored in: $BACKUP_DIR"
 echo "🔄 You may need to restart your shell or source ~/.zshrc"
+echo "💻 VS Code will use the new settings when you restart it"
