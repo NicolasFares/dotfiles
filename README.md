@@ -13,6 +13,8 @@ dotfiles/
 │   └── .gitconfig # Git global settings
 ├── vscode/        # Visual Studio Code settings
 │   └── User/      # User settings, keybindings, and extensions
+├── obsidian/      # Obsidian templates and configurations
+│   └── templates/ # Daily note and other templates
 ├── config/        # Application configurations
 │   └── .config/   # Various app configs
 ├── install.sh     # Installation script
@@ -75,6 +77,14 @@ ln -s ~/dotfiles/vscode/User/extensions.json ~/Library/Application\ Support/Code
 ln -s ~/dotfiles/config/.config ~/.config
 ```
 
+### Obsidian Templates
+
+```bash
+# Link templates to your Obsidian vault (adjust path as needed)
+mkdir -p ~/Documents/ObsidianVault/Templates/Daily\ Operations
+ln -s ~/dotfiles/obsidian/templates/Daily\ Note.md ~/Documents/ObsidianVault/Templates/Daily\ Operations/Daily\ Note.md
+```
+
 ## 📦 What's Included
 
 - **Zsh**: Shell configuration with Oh My Zsh
@@ -84,6 +94,10 @@ ln -s ~/dotfiles/config/.config ~/.config
   - Language-specific configurations for Python, TypeScript, etc.
   - Comprehensive file exclusions and search optimizations
   - Curated extension recommendations for development
+- **Obsidian**: Daily note template for comprehensive daily planning and reflection
+  - Structured template with time blocks, priorities, and project tracking
+  - Health, learning, and gratitude sections for work-life balance
+  - Automatic linking to previous/next days and weekly reviews
 - **App Configs**: Various application configurations
 
 ## 🛡️ Security

@@ -62,6 +62,15 @@ if [ -d "$HOME/.config" ]; then
 fi
 backup_and_link "$DOTFILES_DIR/config/.config" "$HOME/.config"
 
+# Obsidian templates (if Obsidian vault exists)
+OBSIDIAN_VAULT_DIR="/Users/nfares/Documents/ObsidianVault"
+if [ -d "$OBSIDIAN_VAULT_DIR" ]; then
+    OBSIDIAN_TEMPLATES_DIR="$OBSIDIAN_VAULT_DIR/Templates/Daily Operations"
+    mkdir -p "$OBSIDIAN_TEMPLATES_DIR"
+    backup_and_link "$DOTFILES_DIR/obsidian/templates/Daily Note.md" "$OBSIDIAN_TEMPLATES_DIR/Daily Note.md"
+    backup_and_link "$DOTFILES_DIR/obsidian/templates/Meeting Notes.md" "$OBSIDIAN_TEMPLATES_DIR/Meeting Notes.md"
+fi
+
 echo "✅ Dotfiles installation complete!"
 echo "📦 Backups stored in: $BACKUP_DIR"
 echo "🔄 You may need to restart your shell or source ~/.zshrc"
